@@ -4,12 +4,14 @@ module Enumerable
     for x in self do
       yield(x)
     end
+    self
   end
 
   def my_each_with_index
     for x in 0...self.length do
       yield(self[x] , x)
     end
+    self
   end
 
   def my_select
@@ -106,10 +108,10 @@ end
 
 
 
-puts ""
-
-puts [10,25,34,48,51].inject(1){|product,i| product + i}
-puts ([10,25,34,48,51].my_inject(1){|product,i| product + i})
+# puts ""
+#
+# puts [10,25,34,48,51].inject(1){|product,i| product + i}
+# puts ([10,25,34,48,51].my_inject(1){|product,i| product + i})
 #
 # [10,25,34,48,51].my_each do |i|
 #   print i
@@ -138,5 +140,5 @@ puts ([10,25,34,48,51].my_inject(1){|product,i| product + i})
 # puts ([10,25,34,48,51].my_map do |i|
 #   i / 2.0
 # end)
-
-puts ""
+#
+# puts ""
